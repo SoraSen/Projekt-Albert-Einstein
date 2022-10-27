@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap");
+:root {
+  --color-body: #b6cbce;
+  --color-heading: #eef3db;
+  --color-base: #b06745;
+  --color-base2: #40201a;
+  --color-brand: #fc9362;
+  --color-brand2: #ffbd77;
+  --sidebar-width: 240px;
+  --font-base: "Josefin Sans";
+}
+
+body {
+  background-color: var(--color-base2);
+  color: var(--color-body);
+  font-family: var(--font-base) "serif";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+  color: var(--color-heading);
+  font-weight: 700;
+}
+p {
+  color: white;
+}
+a {
+  text-decoration: none;
+  color: var(--color-body);
+  transition: all 0.4s ease;
+}
+
+a:hover {
+  color: var(--color-brand);
+}
+
+img {
+  width: 100%;
+}
+.text-brand {
+  color: var(--color-brand);
+}
+.bg-base {
+  background-color: rgba(75, 51, 33, 0.817);
+  padding: 20px;
+}
+.full-height {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  border-bottom: 2px solid #eef3db;
+}
+
+.shadow-effect {
+  transition: all 0.5s;
+}
+
+.shadow-effect:hover {
+  box-shadow: -4px 4px 0 0 var(--color-brand2);
+}
+
+.pic {
+  background-image: url(./assets/images/rz062-albert-einstein.jpg);
+  background-size: cover;
+}
+.pic1 {
+  background-image: url(./assets/images/mit-der-marke-albert-einstein.jpg);
+  background-size: cover;
+}
+.pic2 {
+  background-image: url(./assets/images/einstein.webp);
+  background-size: cover;
+}
+
+.pic3 {
+  background-image: url(./assets/images/ragam-121220-Albert-Einstein-Foto-Dok.-New-Scientist.jpg);
+  background-size: cover;
+}
+
+.kasten {
+  padding-top: 50px;
+}
+.iconbox {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  background-color: var(--color-base);
+  color: var(--color-brand2);
+  /* margin-bottom: 5px; */
+}
+/*  ***********NAVBAR*********** */
+
+.navbar {
+  background-color: var(--color-base);
+}
+.navbar .nav-link {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: whitesmoke;
+}
+
+.navbar .nav-link:hover {
+  color: var(--color-brand);
+}
+
+.navbar .nav-link.active {
+  color: var(--color-brand);
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    min-height: 100vh;
+    width: var(--sidebar-width);
+    background: linear-gradient(
+        rgba(191, 96, 77, 0.68),
+        rgba(191, 96, 77, 0.68)
+      ),
+      url(./assets/images/sidebar.png);
+    background-size: cover;
+    /* background-position: center; */
+  }
+  .navbar-brand img {
+    border: 8px solid var(--color-brand);
+  }
+
+  /* **********CONTENT********** */
+  #content-wrapper {
+    padding-left: var(--sidebar-width);
+  }
+}
+
+/* **********BUTTON********** */
+
+.btn {
+  padding: 12px 28px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: var(--color-brand);
+  border-color: var(--color-base);
+}
+.btn-brand:hover,
+.btn-brand:focus {
+  background-color: var(--color-brand2);
+  color: var(--color-base2);
+  border-color: var(--color-brand);
+}
+.custom-link {
+  font-weight: 700;
+  position: relative;
+}
+.custom-link::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-brand);
+  position: absolute;
+  left: 0;
+  top: 110%;
+  transition: all 0.4s;
+}
+
+.custom-link:hover::after {
+  width: 100%;
+}
+.line {
+  color: var(--color-heading);
+  position: relative;
+  top: 35%;
+  width: 28rem;
+  margin: 0 auto;
+  border-right: 2px solid var(--color-heading);
+  font-size: 200%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(50%);
+}
+
+/* ************** ANIMATION ***************/
+
+.type {
+  animation: typewriter 4s steps(256) 1s 1 normal both,
+    cursor 0.5s infinite normal;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 30ch;
+  }
+}
+
+@keyframes cursor {
+  from {
+    border-right-color: rgba(207, 160, 43, 0.45);
+  }
+
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.card-body {
+  background-color: rgba(61, 23, 4, 0.779);
+}
+
+/* **************KONTAKT************** */
+
+#kontakt .form-control {
+  background-color: var(--color-base);
+  border-color: var(--color-base);
+  color: var(--color-brand2);
+}
+.form-control::placeholder {
+  background-color: var(--color-base);
+  border-color: var(--color-base);
+  color: var(--color-brand2);
+}
+
+#kontakt .form-control:focus {
+  border-color: var(--color-heading);
+  box-shadow: none;
+}
+
+#kontakt input.form-control {
+  height: 44px;
+}
+.submit {
+  background-color: var(--color-heading);
+}
+/* **********VIDEO********** */
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+}
+
+/* **********SOCIAL-MEDIA********** */
+
+footer {
+  background-color: var(--color-brand);
+  background-image: url(./assets/images/footer2.png);
+}
+.zeichen {
+  font-size: 25px;
+  font-weight: bolder;
+  color: var(--color-base2);
+}
+.social-media a {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-base2);
+  border-radius: 100px;
+  font-size: 24px;
+}
